@@ -4,7 +4,7 @@
 
 #include "shapes.h"
 
-Point makePoint( float x, float y ) {
+Point makePoint( float x, float y ) {              // Initialise a Point struct with the x and y values
     Point p;
     p.x = x;
     p.y = y;
@@ -13,28 +13,28 @@ Point makePoint( float x, float y ) {
 
 // complete other functions below
 
-Line makeLine (point p1, point p2) {
-    line l;
+Line makeLine (Point p1, Point p2) {               // Build a Line from the two Points stored in an array
+    Line l;
     l.p[0] = p1;
     l.p[1] = p2;
     return l;
 }
 
-Triangle makeTriangle (point p1, point p2, point p3) {
+Triangle makeTriangle (Point p1, Point p2, Point p3) {           // Build a Triangle from the three Points
     Triangle t;
     t.p[0] = p1;
     t.p[1] = p2;
-    t.p[3] = p3;
+    t.p[2] = p3;
     return t;
 }
 
-float lineLength(line 1) {
+float lineLength(Line 1) {                           // Compute the distance between the two points using the formula
     float dx = l.p[1].x  - l.p[0].x;
-    float dy = l.p[1].y  - l.p[1].y;
+    float dy = l.p[1].y  - l.p[0].y;
     return sqrt (dx * dx + dy * dy);
 }
 
-float triangleArea(triangle t) {
+float triangleArea(triangle T) {                    // Compute the triangles area by using th side lengths and another formula
     Line l1 = makeLine(t.p[0] , t.p[1]);
     Line l2 = makeLine(t.p[1] , t.p[2]);
     Line l3 = makeLine(t.p[2] , t.p[0]);
@@ -48,9 +48,3 @@ float triangleArea(triangle t) {
     return sqrt(s * (s - a) * (s - b) * (s - c));
 }
 
-
-
-
-// - start with stubs as above
-// - compile regularly to test syntax
-// - test functions by calling them from main()
