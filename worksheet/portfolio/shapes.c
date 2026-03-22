@@ -34,7 +34,7 @@ float lineLength(Line l) {                           // Compute the distance bet
     return sqrt (dx * dx + dy * dy);
 }
 
-float triangleArea(triangle t) {                    // Compute the triangles area by using th side lengths and another formula
+float triangleArea(Triangle t) {                    // Compute the triangles area by using th side lengths and another formula
     Line l1 = makeLine(t.p[0] , t.p[1]);
     Line l2 = makeLine(t.p[1] , t.p[2]);
     Line l3 = makeLine(t.p[2] , t.p[0]);
