@@ -28,13 +28,13 @@ Triangle makeTriangle (Point p1, Point p2, Point p3) {           // Build a Tria
     return t;
 }
 
-float lineLength(Line 1) {                           // Compute the distance between the two points using the formula
+float lineLength(Line l) {                           // Compute the distance between the two points using the formula
     float dx = l.p[1].x  - l.p[0].x;
     float dy = l.p[1].y  - l.p[0].y;
     return sqrt (dx * dx + dy * dy);
 }
 
-float triangleArea(triangle T) {                    // Compute the triangles area by using th side lengths and another formula
+float triangleArea(triangle t) {                    // Compute the triangles area by using th side lengths and another formula
     Line l1 = makeLine(t.p[0] , t.p[1]);
     Line l2 = makeLine(t.p[1] , t.p[2]);
     Line l3 = makeLine(t.p[2] , t.p[0]);
