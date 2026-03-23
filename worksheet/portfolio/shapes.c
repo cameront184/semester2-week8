@@ -71,9 +71,9 @@ bool pointInLine( Point p, Line l);{
             return true;
         }
     }
-
     return false;
-   
+}
+
 bool pointInTriangle( Point p, Triangle t );{
     Triangle t1 = makeTriangle(p, t.p[1], t.p[2]);
     Triangle t2 = makeTriangle(t.p[0], p, t.p[2]);
