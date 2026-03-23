@@ -62,12 +62,17 @@ bool pointInLine( Point p, Line l);{
         return false;
     }
 
-    if (p.x >= fmin(x1, x2) && p.x <= fmax(x1, x2) &&
-        p.y >= fmin(y1, y2) && p.y <= fmax(y1, y2)) {
-        return true; 
+    if ((p.y - y1) * (x2 - x1) != (p.x - x1) * (y2 - y1)) {
+        return false;
     }
-        return false
-}
+
+    if ((p.x >= x1 && p.x <= x2) || (p.x >= x2 && p.x <= x1)) {
+        if ((p.y >= y1 && p.y <= y2) || (p.y >= y2 && p.y <= y1)) {
+            return true;
+        }
+    }
+
+    return false;
    
 bool pointInTriangle( Point p, Triangle t );{
     Triangle t1 = makeTriangle(p, t.p[1], t.p[2]);
