@@ -48,3 +48,35 @@ float triangleArea(Triangle t) {                    // Compute the triangles are
     return sqrt(s * (s - a) * (s - b) * (s - c));
 }
 
+bool samePoint( Point p1, Point p2 ); {
+    return(p1.x==p2.x)&&(p1.y==p2.y);
+}
+
+bool pointInLine( Point p, Line l);{
+    float x1 = l.p[0].x;
+    float y1 = l.p[0].y;
+    float x2 = l.p[1].x;
+    float y2 = l.p[1].y;
+
+    if ((p.y - y1) * (x2 - x1) != (p.x - x1) * (y2 - y1)) {
+        return false;
+    }
+
+    if (p.x >= fmin(x1, x2) && p.x <= fmax(x1, x2) &&
+        p.y >= fmin(y1, y2) && p.y <= fmax(y1, y2)) {
+        return true; 
+    }
+        return false
+}
+   
+bool pointInTriangle( Point p, Triangle t );{
+    Triangle t1 = makeTriangle(p, t.p[1], t.p[2]);
+    Triangle t2 = makeTriangle(t.p[0], p, t.p[2]);
+    Triangle t3 = makeTriangle(t.p[0], t.p[1], p);
+
+    float total = triangleArea(t);
+    float sum = triangleArea(t1) + triangleArea(t2) + triangleArea(t3);
+
+    return sum == total;
+    
+}
