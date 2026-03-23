@@ -48,11 +48,11 @@ float triangleArea(Triangle t) {                    // Compute the triangles are
     return sqrt(s * (s - a) * (s - b) * (s - c));
 }
 
-bool samePoint( Point p1, Point p2 ); {
+bool samePoint( Point p1, Point p2 ) {
     return(p1.x==p2.x)&&(p1.y==p2.y);
 }
 
-bool pointInLine( Point p, Line l);{
+bool pointInLine( Point p, Line l) {
     float x1 = l.p[0].x;
     float y1 = l.p[0].y;
     float x2 = l.p[1].x;
@@ -74,7 +74,7 @@ bool pointInLine( Point p, Line l);{
     return false;
 }
 
-bool pointInTriangle( Point p, Triangle t );{
+bool pointInTriangle( Point p, Triangle t ) {
     Triangle t1 = makeTriangle(p, t.p[1], t.p[2]);
     Triangle t2 = makeTriangle(t.p[0], p, t.p[2]);
     Triangle t3 = makeTriangle(t.p[0], t.p[1], p);
